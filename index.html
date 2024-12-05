@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Surveyr</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+			<img class="image1" src="images/Website_256px.png" />
+				<!-- <h1>Eventually</h1> -->     
+				<p>real-time AI and spatial workflows for <br /> 
+				<b>fast</b>, <b>precise</b>, and <b>engaging</b> building surveys.</p>
+			</header>
+
+		<!-- Signup Form id="signup-form" method="post" action="#" -->
+			<form id="signup-form" name="submit-to-google-sheet">
+				<input type="email" name="Email" id="email" placeholder="Email Address" />
+				<input type="submit" value="Sign Up" />
+			</form>
+
+			<script>
+				const scriptURL = 'https://script.google.com/macros/s/AKfycbz3UCAHbso9zaUSIz17zabm6nyqtEPnFmpPeqNmPiYt1sHtyxf_V-2PqP4KgtPEvE7pSQ/exec'
+				const form = document.forms['submit-to-google-sheet']
+
+				form.addEventListener('submit', e => {
+					e.preventDefault()
+					fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+						.then(response => console.log('Success!', response))
+						.catch(error => console.error('Error!', error.message))
+				})
+			</script>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://www.linkedin.com/in/amyvstone/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					<li><a href="mailto:amy@surveyr.uk" class="icon fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Surveyr Ltd 2024</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
